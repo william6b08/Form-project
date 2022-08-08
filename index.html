@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Registration Form</title>
+</head>
+<body>
+  <div class="main-content">
+    <!-- picture on the left -->
+    <div class="cover-picture">
+      <div class="cover-picture-text-container">
+        <img src="./museum-icon.png" alt="museum-icon">
+        <h3>Sign up for more information</h3>
+      </div>
+    </div>
+
+    <!-- content on the right -->
+    <div class="form">
+      <div class="greeting">
+        <p>If you wish to know more about the culture of ancient civilzation,
+          you have come to a right place, fill in the form below to sign up for our newsletter release and
+          reservation for a tour.
+        </p>
+      </div>
+      <div class="input-area">
+        <form action="#0" method="post">
+          <fieldset>
+            <legend>Fields marked with "*" are mandatory.</legend>
+            <ul>
+              <li>
+                <label for="FName">FIRST NAME</label>
+                <input type="text" name="user_first_name" id="FName" required>
+              </li>
+    
+              <li>
+                <label for="LName">LAST NAME</label>
+                <input type="text" name="user_last_name" id="LName" required>
+              </li>
+              <li>
+                <label for="Email">EMAIL</label>
+                <input type="email" name="user_e_mail" id="Email" required>
+              </li>
+              <li>
+                <label for="phone-number">PHONE NUMBER</label>
+                <input type="text" name="user_phone_number" id="phone-number">
+              </li>
+              <li>
+                <label for="password">PASSWORD</label>
+                <input type="password" name="user_password" id="password" required>
+              </li>
+    
+              <li>
+                <label for="password-confirm">CONFIRM PASSWORD</label>
+                <input type="password" name="confirmed-password" id="password-confirm" required>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </div>
+      <div class="submit"></div>
+    </div>
+  </div>
+</body>
+</html>
