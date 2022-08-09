@@ -18,8 +18,8 @@
 /* Picture on the left */
 .cover-picture{
   background-image: url('../Form-project/Cover-Picture.jpg');
-  background-position: 40% 4%;
-  background-size: auto;
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
   
 }
@@ -47,6 +47,22 @@ h3{
   position: relative;
   top: -35px;
   left: 30px;
+}
+
+div.credit{
+  position: absolute;
+  bottom: 0;
+  right: 50vw;
+  background-color: #a4a4a4;
+  opacity: 0.5;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+div.credit > *{
+  display: block;
+  padding-right: 5px;
 }
 
 /* Right hand side content */
