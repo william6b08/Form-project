@@ -10,6 +10,7 @@
 }
 
 .main-content{
+  background-color: rgb(238, 209, 187);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -17,6 +18,7 @@
 
 /* Picture on the left */
 .cover-picture{
+  flex: 1;
   background-image: url('./cover-picture.jpg');
   background-position: center;
   background-size: 100%;
@@ -25,29 +27,21 @@
 }
 
 /* Text on top of the picture */
-.cover-picture-text-container{
-  width: 50vw;
+.cover-picture-text-container{  
   background-color: rgba(176, 172, 165, 0.4);
   position: relative;
   top: 40vh;
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-img, h3{
-  display: inline-block;
-}
-
-img {
+  img {
   width: 10vw;
   height: auto;
   margin-left: 5vw;
 }
 
-h3{
-  position: relative;
-  top: -35px;
-  left: 30px;
-}
 
 div.credit{
   position: absolute;
@@ -67,12 +61,7 @@ div.credit > *{
 
 /* Right hand side content */
 .form{
-  width:50vw;
-}
-
-
-.greeting, .submit{
-  background-color: rgb(238, 209, 187)
+  flex: 1;
 }
 
 .greeting{
@@ -93,14 +82,11 @@ p > span{
 
 }
 
-.input-area::after{
-  width: auto;
-  box-shadow: 0 5px 10px #a4a4a4;
-}
-
 .input-area{
+  background-color: #eee;
   height: 30vh;
   padding: 5px;
+  box-shadow: 0 5px 10px #a4a4a4;
 }
 
 .submit{
@@ -143,10 +129,10 @@ input + span{
   position: relative;
 }
 
+/* Input will have their frame turn red and alert message appear if user did not input any values. */
 input:invalid{
   border: 2px solid red;
 }
-
 input:invalid + span::after{
   color: rgba(133, 51, 51, 0.841);
   position: absolute;
@@ -160,7 +146,7 @@ input:valid + span::before{
   position: absolute;
   font-size: 0.7rem;
   content: '✓';
-  left: 220px;
+  left: 230px;
   top: -25px
 }
 
@@ -214,10 +200,52 @@ input[type='date']:disabled{
   color: #aaa;
 }
 
-footer > p{
+/* Buttons layout */
+fieldset.buttons{
   position: relative;
-  top: 150px;
-  left: 30px;
+  top: -60px;
+}
+
+ul.buttons{
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+ul.buttons li{
+  height: 5vh;
+  width: fit-content;
+}
+
+button{
+  font-size: 0.8rem;
+  background-color: #EEBBBE;
+  box-shadow: 0 5px 5px rgb(148, 144, 142);
+  border: none;
+  width: 15vw;
+  padding: 3px;
+  border-radius: 0.3rem;
+  transition: box-shadow 0.5s; /*The box shadow will disappear if it is being pressed
+                              , the duration is 0.5s. This effect is to enhance button feedback*/
+}
+
+button:hover{
+  cursor: pointer;
+  color: white;
+}
+
+button:active{
+  box-shadow: none;
+}
+
+/* footer */
+footer{
+  position: absolute;
+  bottom: 150px;
+  right: 12px;
+}
+
+footer p{
+  text-align: center;
   font-size: 0.6rem;
 }
 
