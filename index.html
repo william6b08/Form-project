@@ -20,28 +20,31 @@
     <!-- content on the right -->
     <div class="form">
       <div class="greeting">
-        <p>If you wish to know more about the culture of ancient civilzation,
-          you have come to a right place, fill in the form below to sign up for our newsletter release and
-          reservation for a tour.
+        <p>
+          If you wish to know more about the culture of ancient civilzation,
+          you have come to a right place, fill in the form below to sign up for our <span>newsletter releases</span> and
+          <span>reservation for a tour</span>.
         </p>
       </div>
       <div class="input-area">
         <form action="#0" method="post">
-          <fieldset>
-            <legend>Fields marked with "*" are mandatory.</legend>
+          <fieldset class="personal-info">
             <ul>
               <li>
                 <label for="FName">FIRST NAME</label>
                 <input type="text" name="user_first_name" id="FName" required>
+                <span></span>
               </li>
     
               <li>
                 <label for="LName">LAST NAME</label>
                 <input type="text" name="user_last_name" id="LName" required>
+                <span></span>
               </li>
               <li>
                 <label for="Email">EMAIL</label>
                 <input type="email" name="user_e_mail" id="Email" required>
+                <span></span>
               </li>
               <li>
                 <label for="phone-number">PHONE NUMBER</label>
@@ -50,18 +53,54 @@
               <li>
                 <label for="password">PASSWORD</label>
                 <input type="password" name="user_password" id="password" required>
+                <span></span>
               </li>
     
               <li>
                 <label for="password-confirm">CONFIRM PASSWORD</label>
                 <input type="password" name="confirmed-password" id="password-confirm" required>
+                <span></span>
               </li>
             </ul>
-          </fieldset>
+            </fieldset>
+
+              <fieldset class="join-tour">
+                <ul class="join-tour">
+                  <li>
+                    <label for="tour-checkbox">I would like to book a tour.</label>
+                    <input type="checkbox" name="tour-checkbox" id="tour-checkbox" checked>
+                  </li>
+                  <li>
+                    <label for="tour-date">PICK A DATE FOR YOUR TOUR</label>
+                    <input type="date" name="user_date_of_tour" id="tour-date">
+                  </li>
+                </ul>
+              </fieldset>
         </form>
       </div>
       <div class="submit"></div>
+      <button>HELLO</button>
     </div>
   </div>
 </body>
+
+<script>
+  const checkbox = document.getElementById('tour-checkbox');
+
+  checkbox.addEventListener('change', ()=>toggleEnable(event));
+
+  const btn = document.getElementsByTagName('button');
+
+
+
+  function toggleEnable()
+  {
+    const date_picker = document.getElementById('tour-date'); //get hold of the date-picker input
+    const date_picker_label = document.querySelector('[for="tour-date"]'); //get hold of the label
+
+    date_picker.disabled = !date_picker.disabled; //this is a toggle, disable is toggled between true and false.
+    date_picker_label.classList.toggle('label_disabled');
+  }
+</script>
+
 </html>

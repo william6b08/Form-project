@@ -3,6 +3,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 .main-content{
@@ -22,7 +24,7 @@
 
 /* Text on top of the picture */
 .cover-picture-text-container{
-  width: 60vw;
+  width: 50vw;
   background-color: rgba(176, 172, 165, 0.4);
   position: relative;
   top: 40vh;
@@ -47,25 +49,38 @@ h3{
 
 /* Right hand side content */
 .form{
-  width:40vw;
+  width:50vw;
 }
 
 
 .greeting, .submit{
-  background-color: rgb(248,248,248)
+  background-color: rgb(238, 209, 187)
 }
 
 .greeting{
   height: 35vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5px 5px 20px;
+  line-height: 2rem;
+}
+
+p > span{
+  font-weight: 900;
+
+}
+
+.input-area::after{
+  width: auto;
+  box-shadow: 0 5px 10px #a4a4a4;
 }
 
 .input-area{
-  box-shadow: 0 5px 10px #a4a4a4;
   height: 30vh;
+  padding: 5px;
 }
 
 .submit{
-  margin-top:10px;
   height: 35vh;
 }
 
@@ -74,26 +89,92 @@ fieldset{
   border: 0;
 }
 
+label{
+  font-size: 0.7rem;
+}
+
 ul{
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 li{
   width: 20vw;
-  height: 10vh;;
+  height: 10vh;
 }
 
 input, label{
   display: block;
+  white-space:nowrap;
 }
 
 input{
   border: 2px solid rgb(194, 189, 186);
   border-radius: 5px;
+  padding: 3px;
+}
+
+input + span{
+  position: relative;
 }
 
 input:invalid{
   border: 2px solid red;
+}
+
+input:invalid + span::after{
+  color: rgba(133, 51, 51, 0.841);
+  position: absolute;
+  font-size: 0.5rem;
+  content: 'This is a required field.';
+  white-space:nowrap;
+}
+
+input:valid + span::before{
+  color: green;
+  position: absolute;
+  font-size: 0.7rem;
+  content: '✓';
+  left: 220px;
+  top: -25px
+}
+
+/* form elements for joining a tour */
+ul.join-tour{
+  display: flex;
+  flex-direction: column;
+}
+
+ul.join-tour li{
+  height: 5vh;
+  width: 25vw;
+  
+}
+
+ul.join-tour li label, ul.join-tour li input{
+  display: inline-block;
+}
+
+input[type='checkbox']{
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+label[for='tour-checkbox']{
+  font-size: 0.9rem;
+}
+
+label[for="tour-date"]{
+  font-size: 0.65rem;
+}
+
+input[type='date']:disabled{
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.label_disabled{
+  color: #aaa;
 }
