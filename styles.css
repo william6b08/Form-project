@@ -17,7 +17,7 @@
 
 /* Picture on the left */
 .cover-picture{
-  background-image: url('../Form-project/cover-Picture.jpg');
+  background-image: url('cover-Picture.jpg');
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
