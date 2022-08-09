@@ -1,9 +1,11 @@
 /* Overall style */
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Tiro Gurmukhi', serif;
   font-size: 20px;
 }
 
@@ -65,8 +67,13 @@ h3{
   line-height: 2rem;
 }
 
+p{
+  margin: 0 10px;
+}
+
 p > span{
   font-weight: 900;
+  font-style: italic;
 
 }
 
@@ -150,9 +157,13 @@ ul.join-tour{
 ul.join-tour li{
   height: 5vh;
   width: 25vw;
+  margin-left: 30px; 
   
 }
 
+ul.join-tour > li:last-child > *{
+  display: block;
+}
 ul.join-tour li label, ul.join-tour li input{
   display: inline-block;
 }
@@ -160,6 +171,14 @@ ul.join-tour li label, ul.join-tour li input{
 input[type='checkbox']{
   margin-top: 5px;
   margin-left: 10px;
+}
+
+input[type='date']:invalid + span::after{
+  color: rgba(133, 51, 51, 0.841);
+  position: absolute;
+  font-size: 0.5rem;
+  content: 'Please select a date.';
+  white-space:nowrap;
 }
 
 label[for='tour-checkbox']{
@@ -177,4 +196,15 @@ input[type='date']:disabled{
 
 .label_disabled{
   color: #aaa;
+}
+
+footer > p{
+  position: relative;
+  top: 150px;
+  left: 30px;
+  font-size: 0.6rem;
+}
+
+a{
+  font-size: 0.6rem;
 }
